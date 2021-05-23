@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "dpc-dep-programming",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Site of the programming department of Donetsk Polytechnic College",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Alexander Holub <holub.alexander.it@gmail.com>",
   "dependencies": {
     "gatsby": "^3.4.1",
     "gatsby-plugin-gatsby-cloud": "^2.4.1",
@@ -37,9 +37,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/holub-alexander/dpc-dep-programming"
   }
 }
