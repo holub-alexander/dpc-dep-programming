@@ -13,16 +13,18 @@ const Contacts = () => {
         <Title>Контакты</Title>
         <ContactsWrapper>
           <EnrolleeForm />
-          <ContactsListBox>
+          <div>
             <ContactsList />
-          </ContactsListBox>
+          </div>
         </ContactsWrapper>
       </Container>
     </ContactsBox>
   );
 };
 
-const ContactsBox = styled.div``;
+const ContactsBox = styled.div`
+  margin-bottom: 35px;
+`;
 
 const Container = styled.div`
   max-width: 1210px;
@@ -45,7 +47,5 @@ const ContactsWrapper = styled.div`
   max-width: 900px;
   margin: 0 auto;
 `;
-
-const ContactsListBox = styled.div``;
 
 export default Contacts;

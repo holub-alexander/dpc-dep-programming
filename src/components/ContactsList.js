@@ -6,7 +6,7 @@ import { FiPhoneCall } from 'react-icons/fi';
 import { BsPeopleCircle } from 'react-icons/bs';
 import Social from './Social';
 
-const ContactInfo = ({ title, info, iconType }) => {
+const ContactInfo = ({ title, info, iconType, isPosFooter = false }) => {
   const icons = {
     address: <FaRegBuilding />,
     email: <HiOutlineMail />,
@@ -14,7 +14,15 @@ const ContactInfo = ({ title, info, iconType }) => {
     social: <BsPeopleCircle />,
   };
 
-  return (
+  return isPosFooter ? (
+    <>
+      <span>
+        {icons[iconType] ?? null}
+        {title}:{' '}
+      </span>
+      {info}
+    </>
+  ) : (
     <ContactInfoBox>
       <span>
         {icons[iconType] ?? null}
