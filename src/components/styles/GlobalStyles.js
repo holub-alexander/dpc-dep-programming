@@ -20,4 +20,10 @@ export const GlobalStyle = createGlobalStyle`
     position: relative;
     overflow-x: hidden;
   }
+
+  img {
+    display: block;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
 `;
