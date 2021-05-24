@@ -6,6 +6,10 @@ import HeroSlider from './HeroSlider';
 const Hero = () => {
   return (
     <HeroContainer>
+      <h1>
+        Донецкий политехнический колледж, отделение Программирование в
+        компьютерных системах
+      </h1>
       <Container>
         <Logo>
           <BiBuildingHouse />

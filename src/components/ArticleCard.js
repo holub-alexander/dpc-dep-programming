@@ -2,7 +2,7 @@ import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import { BsCalendar } from 'react-icons/bs';
 import styled from 'styled-components';
-import Button from './Button';
+import { Button } from './Button';
 
 const ArticleCard = () => {
   return (
@@ -20,7 +20,7 @@ const ArticleCard = () => {
           Текст описывающий содержание первой статьи.
         </ArticleCardDescr>
         <ArticleCardFooter>
-          <Button>Читать</Button>
+          <Button primary>Читать</Button>
           <Calendar>
             <BsCalendar />
             23.02.21
@@ -34,6 +34,7 @@ const ArticleCard = () => {
 const ArticleCardBox = styled.div`
   border: 1px solid #e8e8e8;
   max-height: 483px;
+  border-radius: 7px;
   overflow-y: hidden;
 `;
 
