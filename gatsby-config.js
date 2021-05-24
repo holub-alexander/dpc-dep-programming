@@ -5,6 +5,7 @@ module.exports = {
     author: `@holub-alexander`,
   },
   plugins: [
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     {
@@ -29,6 +30,5 @@ module.exports = {
       },
     },
     `gatsby-plugin-gatsby-cloud`,
-    `gatsby-plugin-styled-components`,
   ],
 };
