@@ -10,6 +10,8 @@ export const GlobalStyle = createGlobalStyle`
   :root {
     --accent: #0642cd;
     --light-xl: #fff;
+    --dark-x: #424242;
+    --border: #e8e8e8;
   }
 
   body {
@@ -25,5 +27,15 @@ export const GlobalStyle = createGlobalStyle`
     display: block;
     object-fit: cover;
     object-position: 50% 50%;
+  }
+
+  .hidden {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    margin: -1px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    opacity: 0;
   }
 `;
