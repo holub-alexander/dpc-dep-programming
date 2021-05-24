@@ -18,7 +18,7 @@ const LastNews = () => {
           <ArticleCard />
         </News>
         <SeeAll>
-          <Button>Все новости</Button>
+          <Button to={'/'}>Все новости</Button>
         </SeeAll>
       </Container>
     </LastNewsBox>

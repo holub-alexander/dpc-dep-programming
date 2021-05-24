@@ -18,7 +18,7 @@ const LastEvents = () => {
           <ArticleCard />
         </Events>
         <SeeAll>
-          <Button>Все события</Button>
+          <Button to={'/'}>Все события</Button>
         </SeeAll>
       </Container>
     </LastEventsBox>
