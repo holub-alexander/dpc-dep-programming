@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 export const Button = styled(Link)`
   display: inline-block;
   text-align: center;
+  text-decoration: none;
   cursor: pointer;
   background-color: var(
     ${({ primary }) => (primary ? '--accent' : '--light-xl')}

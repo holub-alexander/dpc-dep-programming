@@ -4,40 +4,28 @@ import { FaTelegramPlane } from 'react-icons/fa';
 
 const Social = () => {
   return (
-    <SocialBox>
-      <span>Соцсети:</span>
-      <SocialList>
-        <li>
-          <SocialLink
-            href='https://youtube.com'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <FaTelegramPlane />
-          </SocialLink>
-        </li>
-        <li>
-          <SocialLink
-            href='https://vk.com'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <FaTelegramPlane />
-          </SocialLink>
-        </li>
-      </SocialList>
-    </SocialBox>
+    <SocialList>
+      <li>
+        <SocialLink
+          href='https://youtube.com'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          <FaTelegramPlane />
+        </SocialLink>
+      </li>
+      <li>
+        <SocialLink
+          href='https://vk.com'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          <FaTelegramPlane />
+        </SocialLink>
+      </li>
+    </SocialList>
   );
 };
-
-const SocialBox = styled.div`
-  display: flex;
-  align-items: center;
-
-  span {
-    font-size: 14px;
-  }
-`;
 
 const SocialList = styled.ul`
   display: flex;
@@ -54,7 +42,7 @@ const SocialLink = styled.a`
   width: 30px;
   height: 30px;
   border: 2px solid #e8e8e8;
-  margin-left: 10px;
+  margin-right: 10px;
   transition: 0.2s ease-in;
 
   :hover,
