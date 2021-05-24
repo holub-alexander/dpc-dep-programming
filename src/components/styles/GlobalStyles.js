@@ -10,6 +10,7 @@ export const GlobalStyle = createGlobalStyle`
   :root {
     --accent: #0642cd;
     --light-xl: #fff;
+    --light-x: #f8f8f8;
     --dark-x: #424242;
     --border: #e8e8e8;
   }
