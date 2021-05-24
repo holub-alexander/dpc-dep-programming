@@ -19,7 +19,7 @@ const HeroSlider = () => {
       loop
       autoplay={{ delay: 3000 }}
     >
-      <SwiperSlide>
+      <SwiperSlide style={{ display: 'flex' }}>
         <SlideImage>
           <StaticImage
             src='../assets/images/hero-slide-1.jpg'
@@ -32,7 +32,7 @@ const HeroSlider = () => {
           />
         </SlideImage>
       </SwiperSlide>
-      <SwiperSlide>
+      <SwiperSlide style={{ display: 'flex' }}>
         <SlideImage>
           <StaticImage
             src='../assets/images/hero-slide-2.jpg'
@@ -45,7 +45,7 @@ const HeroSlider = () => {
           />
         </SlideImage>
       </SwiperSlide>
-      <SwiperSlide>
+      <SwiperSlide style={{ display: 'flex' }}>
         <SlideImage>
           <StaticImage
             src='../assets/images/hero-slide-3.jpg'
@@ -63,6 +63,7 @@ const HeroSlider = () => {
 };
 
 const SlideImage = styled.div`
+  display: flex;
   position: relative;
 
   ::before {
