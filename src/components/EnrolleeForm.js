@@ -81,6 +81,7 @@ const FormInput = styled.input`
   ::placeholder {
     font-size: 14px;
     font-weight: 300;
+    user-select: none;
   }
 `;
 
@@ -96,6 +97,7 @@ const FormButton = styled.button`
   border-radius: 5px;
   align-self: start;
   padding: 8px 20px;
+  user-select: none;
 
   :hover,
   :focus {
