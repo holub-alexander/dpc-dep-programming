@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Contacts from '../components/Contacts';
 import Hero from '../components/Hero';
 import LastEvents from '../components/LastEvents';
 import LastNews from '../components/LastNews';
@@ -10,9 +11,14 @@ const IndexPage = () => (
   <>
     <Seo title='Home' />
     <Layout>
+      <h1 className='hidden'>
+        Донецкий политехнический колледж, отделение Программирование в
+        компьютерных системах
+      </h1>
       <Hero />
       <LastNews />
       <LastEvents />
+      <Contacts />
     </Layout>
   </>
 );
