@@ -20,7 +20,9 @@ const ArticleCard = () => {
           Текст описывающий содержание первой статьи.
         </ArticleCardDescr>
         <ArticleCardFooter>
-          <Button primary>Читать</Button>
+          <Button primary='true' to={'/'}>
+            Читать
+          </Button>
           <Calendar>
             <BsCalendar />
             23.02.21

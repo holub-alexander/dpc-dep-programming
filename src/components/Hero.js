@@ -6,10 +6,6 @@ import HeroSlider from './HeroSlider';
 const Hero = () => {
   return (
     <HeroContainer>
-      <h1>
-        Донецкий политехнический колледж, отделение Программирование в
-        компьютерных системах
-      </h1>
       <Container>
         <Logo>
           <BiBuildingHouse />
@@ -73,12 +69,14 @@ const HeroTitle = styled.p`
   color: var(--light-xl);
   text-align: center;
   line-height: 1.1;
+  letter-spacing: 2.5px;
 
   span {
     font-size: 30px;
     font-weight: 500;
     display: block;
     margin-top: 17px;
+    letter-spacing: 1.5px;
   }
 `;
 

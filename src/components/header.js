@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import NavList from './NavList';
-import Social from './Social';
+import HeaderSocial from './HeaderSocial';
 
 const Header = () => {
   return (
@@ -11,14 +11,14 @@ const Header = () => {
           <nav>
             <NavList />
           </nav>
-          <Social />
+          <HeaderSocial />
         </HeadingWrapper>
       </Container>
     </Heading>
   );
 };
 
-const Heading = styled.div`
+const Heading = styled.header`
   background-color: #fff;
   border-bottom: 1px solid #e8e8e8;
 `;
