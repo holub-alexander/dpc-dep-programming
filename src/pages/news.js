@@ -1,10 +1,16 @@
-import React from "react";
+import React from 'react';
+import AllNews from '../components/AllNews';
+import Layout from '../components/layout';
+import Seo from './../components/seo';
 
 const News = () => {
   return (
-    <div>
-      <h1>News</h1>
-    </div>
+    <>
+      <Seo title='Главная страница' />
+      <Layout>
+        <AllNews />
+      </Layout>
+    </>
   );
 };
 

@@ -1,10 +1,16 @@
-import React from "react";
+import React from 'react';
+import Layout from '../components/layout';
+import Seo from './../components/seo';
+import AllEvents from './../components/AllEvents';
 
 const Events = () => {
   return (
-    <div>
-      <h1>Events</h1>
-    </div>
+    <>
+      <Seo title='Главная страница' />
+      <Layout>
+        <AllEvents />
+      </Layout>
+    </>
   );
 };
 
