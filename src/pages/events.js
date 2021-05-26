@@ -3,12 +3,12 @@ import Layout from '../components/layout';
 import Seo from './../components/seo';
 import AllEvents from './../components/AllEvents';
 
-const Events = () => {
+const Events = ({ location }) => {
   return (
     <>
       <Seo title='Все события' />
       <Layout>
-        <AllEvents />
+        <AllEvents location={location} />
       </Layout>
     </>
   );

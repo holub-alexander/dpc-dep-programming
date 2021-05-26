@@ -3,12 +3,12 @@ import AllNews from '../components/AllNews';
 import Layout from '../components/layout';
 import Seo from './../components/seo';
 
-const News = () => {
+const News = ({ location }) => {
   return (
     <>
       <Seo title='Все новости' />
       <Layout>
-        <AllNews />
+        <AllNews location={location} />
       </Layout>
     </>
   );

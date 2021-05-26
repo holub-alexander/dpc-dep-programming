@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Button } from './Button';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
-const ArticleCard = ({ info } = {}) => {
+const ArticleCard = ({ location, info } = {}) => {
   const {
     url = '',
     title = 'Заголовок',
@@ -28,10 +28,7 @@ const ArticleCard = ({ info } = {}) => {
         <Title>{formatText(title, 52)}</Title>
         <ArticleCardDescr>{formatText(descr, 90)}</ArticleCardDescr>
         <ArticleCardFooter>
-          <Button
-            primary='true'
-            to={`${page || window.location.pathname}/${url}`}
-          >
+          <Button primary='true' to={`${page || location.pathname}/${url}`}>
             Читать
           </Button>
           <Calendar>

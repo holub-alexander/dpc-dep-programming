@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import ArticleCard from './ArticleCard';
 import { useStaticQuery, graphql } from 'gatsby';
 
-const AllNews = () => {
+const AllNews = ({ location }) => {
   const data = useStaticQuery(graphql`
     query AllNewsQuery {
       allMarkdownRemark(
@@ -40,7 +40,13 @@ const AllNews = () => {
         <Title>Все новости</Title>
         <NewsBox>
           {data.allMarkdownRemark.nodes.map((article, index) => {
-            return <ArticleCard info={article.frontmatter} key={index} />;
+            return (
+              <ArticleCard
+                info={article.frontmatter}
+                key={index}
+                location={location}
+              />
+            );
           })}
         </NewsBox>
       </Container>
