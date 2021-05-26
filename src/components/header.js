@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import NavList from './NavList';
 import HeaderSocial from './HeaderSocial';
@@ -21,7 +21,8 @@ const Header = () => {
 const Heading = styled.header`
   background-color: #fff;
   border-bottom: 1px solid #e8e8e8;
-  position: sticky;
+  position: fixed;
+  width: 100%;
   top: 0;
   left: 0;
   z-index: 7;
