@@ -1,5 +1,5 @@
 Cтруктура папок и файлов:
-    .
+
     ├── node_modules
     ├── src
     ├── .gitignore
