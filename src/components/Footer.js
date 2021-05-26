@@ -2,8 +2,20 @@ import React from 'react';
 import styled from 'styled-components';
 import { ContactInfo } from './ContactsList';
 import NavList from './NavList';
+import { useStaticQuery, graphql } from 'gatsby';
 
 const Footer = () => {
+  const data = useStaticQuery(graphql`
+    query FooterContactsQuery {
+      markdownRemark(frontmatter: { page: { eq: "index" } }) {
+        frontmatter {
+          address
+          phone
+        }
+      }
+    }
+  `);
+
   return (
     <FooterBox>
       <Container>
@@ -17,7 +29,7 @@ const Footer = () => {
                 <p>
                   <ContactInfo
                     title='Адрес'
-                    info='улица Челюскинцев, 159, г. Донецк'
+                    info={data.markdownRemark.frontmatter.address}
                     iconType='address'
                     isPosFooter='true'
                   />
@@ -27,7 +39,7 @@ const Footer = () => {
                 <p>
                   <ContactInfo
                     title='Телефон'
-                    info='38 (071)-446-45-67'
+                    info={data.markdownRemark.frontmatter.phone}
                     iconType='phone'
                     isPosFooter='true'
                   />
