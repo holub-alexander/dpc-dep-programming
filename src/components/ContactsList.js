@@ -4,6 +4,7 @@ import { FaRegBuilding } from 'react-icons/fa';
 import { HiOutlineMail } from 'react-icons/hi';
 import { FiPhoneCall } from 'react-icons/fi';
 import { BsPeopleCircle } from 'react-icons/bs';
+import { useStaticQuery, graphql } from 'gatsby';
 import Social from './Social';
 
 const ContactInfo = ({ title, info, iconType, isPosFooter = false }) => {
@@ -34,24 +35,40 @@ const ContactInfo = ({ title, info, iconType, isPosFooter = false }) => {
 };
 
 const ContactsList = () => {
+  const data = useStaticQuery(graphql`
+    query ContactsListQuery {
+      markdownRemark(frontmatter: { page: { eq: "index" } }) {
+        frontmatter {
+          address
+          phone
+          email
+        }
+      }
+    }
+  `);
+
   return (
     <List>
       <li>
         <ContactInfo
           title='Адрес'
-          info='улица Челюскинцев, 159, г. Донецк'
+          info={data.markdownRemark.frontmatter.address}
           iconType='address'
         />
       </li>
       <li>
         <ContactInfo
           title='Телефон'
-          info='38 (071)-446-45-67'
+          info={data.markdownRemark.frontmatter.phone}
           iconType='phone'
         />
       </li>
       <li>
-        <ContactInfo title='Email' info='dpt@gmail.com' iconType='email' />
+        <ContactInfo
+          title='Email'
+          info={data.markdownRemark.frontmatter.email}
+          iconType='email'
+        />
       </li>
       <li>
         <ContactInfo title='Соцсети' info={<Social />} iconType='social' />

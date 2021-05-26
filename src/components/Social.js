@@ -1,22 +1,35 @@
 import React from 'react';
 import styled from 'styled-components';
+import vkIcon from '../assets/images/icons/vk.svg';
 import { FaTelegramPlane } from 'react-icons/fa';
+import { useStaticQuery, graphql } from 'gatsby';
 
 const Social = () => {
+  const data = useStaticQuery(graphql`
+    query SocialQuery {
+      markdownRemark(frontmatter: { page: { eq: "index" } }) {
+        frontmatter {
+          vkLink
+          telegramLink
+        }
+      }
+    }
+  `);
+
   return (
     <SocialList>
       <li>
         <SocialLink
-          href='https://youtube.com'
+          href={data.markdownRemark.frontmatter.vkLink}
           target='_blank'
           rel='noopener noreferrer'
         >
-          <FaTelegramPlane />
+          <img src={vkIcon} style={{ width: '17px', height: '17px' }} />
         </SocialLink>
       </li>
       <li>
         <SocialLink
-          href='https://vk.com'
+          href={data.markdownRemark.frontmatter.telegramLink}
           target='_blank'
           rel='noopener noreferrer'
         >
@@ -32,6 +45,10 @@ const SocialList = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
+
+  li:last-child a {
+    margin-right: 0;
+  }
 `;
 
 const SocialLink = styled.a`
