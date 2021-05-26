@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { GlobalStyle } from './styles/GlobalStyles';
 import styled from 'styled-components';
-import Header from './Header';
+import Header from './header';
 import Footer from './Footer';
 
 const Layout = ({ children }) => {
