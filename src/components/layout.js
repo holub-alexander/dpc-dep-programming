@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { GlobalStyle } from './styles/GlobalStyles';
 import Header from './Header';

@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
     title: `ДПК: отделение "Программирование в компьютерных системах"`,
@@ -29,6 +33,14 @@ module.exports = {
         icon: `src/assets/images/gatsby-icon.png`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown`,
+        path: `${__dirname}/src/data`,
+      },
+    },
+    `gatsby-transformer-remark`,
     `gatsby-plugin-gatsby-cloud`,
   ],
 };
