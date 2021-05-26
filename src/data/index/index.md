@@ -10,7 +10,11 @@ phone: '+38 (071) 490-21-27'
 email: 'dpt1929@mail.ru'
 
 sliderImages:
-  ['./sliderImages/hero-slide-1.jpg', './sliderImages/hero-slide-2.jpg']
+  [
+    './sliderImages/hero-slide-1.jpg',
+    './sliderImages/hero-slide-2.jpg',
+    './sliderImages/hero-slide-3.jpg',
+  ]
 sliderImagesAlt:
   [
     'Донецкий политехнический колледж (вид снаружи)',
