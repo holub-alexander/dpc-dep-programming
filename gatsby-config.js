@@ -4,7 +4,7 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `ДПК: отделение "Программирование в компьютерных системах"`,
+    title: `Донецкий политехнический колледж`,
     description: `Новости, мероприятия отделения программирования, Донецкого политехнического колледжа`,
     author: `@holub-alexander`,
   },
@@ -30,7 +30,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/assets/images/gatsby-icon.png`,
+        icon: `src/assets/images/favicon.png`,
       },
     },
     {
