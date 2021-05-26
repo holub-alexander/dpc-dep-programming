@@ -6,7 +6,7 @@ import Seo from './../components/seo';
 const News = () => {
   return (
     <>
-      <Seo title='Главная страница' />
+      <Seo title='Все новости' />
       <Layout>
         <AllNews />
       </Layout>

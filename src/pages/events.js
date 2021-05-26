@@ -6,7 +6,7 @@ import AllEvents from './../components/AllEvents';
 const Events = () => {
   return (
     <>
-      <Seo title='Главная страница' />
+      <Seo title='Все события' />
       <Layout>
         <AllEvents />
       </Layout>
