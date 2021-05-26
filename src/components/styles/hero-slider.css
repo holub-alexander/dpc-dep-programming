@@ -1,0 +1,51 @@
+.swiper-button-next,
+.swiper-button-prev {
+  width: 40px;
+  height: 80px;
+  background-color: rgba(0,0,0, .5);
+  border-radius: 5px;
+}
+
+.swiper-button-next {
+  right: 17px;
+}
+
+.swiper-button-prev {
+  left: 17px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  transition: .2s color ease-in;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 17px;
+  color: white;
+  font-weight: 700;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  border: 1px solid var(--accent);
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets {
+  bottom: 19px;
+}
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #d3d3d3;
+  opacity: 1;
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 9px;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--accent);
+}

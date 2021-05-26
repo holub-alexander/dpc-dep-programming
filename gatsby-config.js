@@ -1,17 +1,22 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
-    title: `ДПК: отделение "Программирование в компьютерных системах"`,
+    title: `Донецкий политехнический колледж`,
     description: `Новости, мероприятия отделения программирования, Донецкого политехнического колледжа`,
     author: `@holub-alexander`,
   },
   plugins: [
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/src/assets/images`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -25,9 +30,17 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`,
+        icon: `src/assets/images/favicon.png`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown`,
+        path: `${__dirname}/src/data`,
+      },
+    },
+    `gatsby-transformer-remark`,
     `gatsby-plugin-gatsby-cloud`,
   ],
 };

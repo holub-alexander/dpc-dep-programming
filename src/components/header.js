@@ -1,42 +1,43 @@
-import * as React from "react"
-import PropTypes from "prop-types"
-import { Link } from "gatsby"
+import React from 'react';
+import styled from 'styled-components';
+import NavList from './NavList';
+import HeaderSocial from './HeaderSocial';
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+const Header = () => {
+  return (
+    <Heading>
+      <Container>
+        <HeadingWrapper>
+          <nav>
+            <NavList />
+          </nav>
+          <HeaderSocial />
+        </HeadingWrapper>
+      </Container>
+    </Heading>
+  );
+};
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+const Heading = styled.header`
+  background-color: #fff;
+  border-bottom: 1px solid #e8e8e8;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 7;
+`;
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
+const HeadingWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
 
-export default Header
+const Container = styled.div`
+  max-width: 1210px;
+  margin: 0 auto;
+  padding: 0 15px;
+`;
+
+export default Header;
