@@ -13,9 +13,11 @@ const ArticleCard = ({ info } = {}) => {
     image,
     page = '',
   } = info;
-  const formatDescr =
-    descr && descr.length > 70 ? `${descr.slice(0, 70)}...` : descr;
   const img = getImage(image);
+
+  const formatText = (text, length) => {
+    return text && text.length > length ? `${text.slice(0, length)}...` : text;
+  };
 
   return (
     <ArticleCardBox>
@@ -23,8 +25,8 @@ const ArticleCard = ({ info } = {}) => {
         <GatsbyImage image={img} alt={title} />
       </ArticleCardImg>
       <ArticleCardInfo>
-        <Title>{title}</Title>
-        <ArticleCardDescr>{formatDescr}</ArticleCardDescr>
+        <Title>{formatText(title, 52)}</Title>
+        <ArticleCardDescr>{formatText(descr, 90)}</ArticleCardDescr>
         <ArticleCardFooter>
           <Button
             primary='true'
@@ -47,6 +49,8 @@ const ArticleCardBox = styled.div`
   max-height: 483px;
   border-radius: 7px;
   overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
 `;
 
 const ArticleCardImg = styled.div`
@@ -56,6 +60,7 @@ const ArticleCardImg = styled.div`
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   height: 209px;
+  flex-shrink: 0;
   background-color: var(--border);
 
   ::after {
@@ -70,7 +75,10 @@ const ArticleCardImg = styled.div`
 `;
 
 const ArticleCardInfo = styled.div`
+  display: flex;
+  flex-direction: column;
   padding: 30px 25px;
+  height: 100%;
 `;
 
 const Title = styled.h3`
@@ -91,6 +99,7 @@ const ArticleCardFooter = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: auto;
 `;
 
 const Calendar = styled.p`
