@@ -2,8 +2,34 @@ import React from 'react';
 import ArticleCard from './ArticleCard';
 import styled from 'styled-components';
 import { Button } from './Button';
+import { useStaticQuery, graphql } from 'gatsby';
 
 const LastEvents = () => {
+  const data = useStaticQuery(graphql`
+    query LastEventsQuery {
+      allMarkdownRemark(
+        filter: { frontmatter: { page: { eq: "events" } } }
+        sort: { fields: frontmatter___date, order: DESC }
+        limit: 3
+      ) {
+        nodes {
+          frontmatter {
+            title
+            page
+            descr
+            url
+            date
+            image {
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
+
   return (
     <LastEventsBox>
       <h2 className='hidden'>
@@ -13,12 +39,12 @@ const LastEvents = () => {
       <Container>
         <Title>Последние события</Title>
         <Events>
-          <ArticleCard />
-          <ArticleCard />
-          <ArticleCard />
+          {data.allMarkdownRemark.nodes.map((article, index) => {
+            return <ArticleCard info={article.frontmatter} key={index} />;
+          })}
         </Events>
         <SeeAll>
-          <Button to={'/'}>Все события</Button>
+          <Button to={'/events'}>Все события</Button>
         </SeeAll>
       </Container>
     </LastEventsBox>
