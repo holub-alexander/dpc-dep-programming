@@ -1,31 +1,40 @@
 import React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
 import { BsCalendar } from 'react-icons/bs';
 import styled from 'styled-components';
 import { Button } from './Button';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
-const ArticleCard = () => {
+const ArticleCard = ({ info } = {}) => {
+  const {
+    url = '',
+    title = 'Заголовок',
+    descr = '',
+    date = '',
+    image,
+    page = '',
+  } = info;
+  const formatDescr =
+    descr && descr.length > 70 ? `${descr.slice(0, 70)}...` : descr;
+  const img = getImage(image);
+
   return (
     <ArticleCardBox>
       <ArticleCardImg>
-        <StaticImage
-          src={'../assets/images/hero-slide-1.jpg'}
-          alt='Text'
-          formats={['avif', 'webp', 'jpg']}
-        />
+        <GatsbyImage image={img} alt={title} />
       </ArticleCardImg>
       <ArticleCardInfo>
-        <Title>Новость 1</Title>
-        <ArticleCardDescr>
-          Текст описывающий содержание первой статьи.
-        </ArticleCardDescr>
+        <Title>{title}</Title>
+        <ArticleCardDescr>{formatDescr}</ArticleCardDescr>
         <ArticleCardFooter>
-          <Button primary='true' to={'/'}>
+          <Button
+            primary='true'
+            to={`${page || window.location.pathname}/${url}`}
+          >
             Читать
           </Button>
           <Calendar>
             <BsCalendar />
-            23.02.21
+            {date}
           </Calendar>
         </ArticleCardFooter>
       </ArticleCardInfo>
@@ -46,6 +55,8 @@ const ArticleCardImg = styled.div`
   position: relative;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+  height: 209px;
+  background-color: var(--border);
 
   ::after {
     content: '';
