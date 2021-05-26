@@ -14,11 +14,21 @@
   left: 17px;
 }
 
+.swiper-button-prev,
+.swiper-button-next {
+  transition: .2s color ease-in;
+}
+
 .swiper-button-next::after,
 .swiper-button-prev::after {
   font-size: 17px;
   color: white;
   font-weight: 700;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  border: 1px solid var(--accent);
 }
 
 .swiper-container-horizontal > .swiper-pagination-bullets {

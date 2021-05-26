@@ -2,19 +2,31 @@ import React from 'react';
 import styled from 'styled-components';
 import { BiBuildingHouse } from 'react-icons/bi';
 import HeroSlider from './HeroSlider';
+import { useStaticQuery, graphql } from 'gatsby';
 
-const Hero = () => {
+const Hero = ({ sliderImg }) => {
+  const data = useStaticQuery(graphql`
+    query HeroQuery {
+      markdownRemark(frontmatter: { page: { eq: "index" } }) {
+        frontmatter {
+          mainDescr
+          mainTitle
+        }
+      }
+    }
+  `);
+
   return (
     <HeroContainer>
       <Container>
         <Logo>
           <BiBuildingHouse />
         </Logo>
-        <HeroSlider />
+        <HeroSlider sliderImg={sliderImg} />
         <HeroInfo>
           <HeroTitle>
-            Донецкий политехнический колледж
-            <span>отделение программирования</span>
+            {data.markdownRemark.frontmatter.mainTitle || ''}
+            <span>{data.markdownRemark.frontmatter.mainDescr || ''}</span>
           </HeroTitle>
         </HeroInfo>
       </Container>

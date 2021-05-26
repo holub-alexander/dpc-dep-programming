@@ -1,4 +1,4 @@
-import { StaticImage } from 'gatsby-plugin-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
@@ -6,7 +6,9 @@ import styled from 'styled-components';
 import 'swiper/swiper-bundle.css';
 import './styles/hero-slider.css';
 
-const HeroSlider = () => {
+const HeroSlider = ({ sliderImg }) => {
+  const data = sliderImg.markdownRemark.frontmatter;
+
   SwiperCore.use([Navigation, Pagination, Autoplay]);
 
   return (
@@ -19,45 +21,17 @@ const HeroSlider = () => {
       loop
       autoplay={{ delay: 3000 }}
     >
-      <SwiperSlide style={{ display: 'flex' }}>
-        <SlideImage>
-          <StaticImage
-            src='../assets/images/hero-slide-1.jpg'
-            alt='Донецкий политехнический колледж (вид снаружи)'
-            placeholder='dominantColor'
-            formats={['avif', 'webp', 'jpg']}
-            width={1180}
-            height={650}
-            layout={'constrained'}
-          />
-        </SlideImage>
-      </SwiperSlide>
-      <SwiperSlide style={{ display: 'flex' }}>
-        <SlideImage>
-          <StaticImage
-            src='../assets/images/hero-slide-2.jpg'
-            alt='Группа в аудитории слушает преподавателя'
-            placeholder='dominantColor'
-            formats={['avif', 'webp', 'jpg']}
-            width={1180}
-            height={650}
-            layout={'constrained'}
-          />
-        </SlideImage>
-      </SwiperSlide>
-      <SwiperSlide style={{ display: 'flex' }}>
-        <SlideImage>
-          <StaticImage
-            src='../assets/images/hero-slide-3.jpg'
-            alt='Студентка выполняет работу за компьютером'
-            placeholder='dominantColor'
-            formats={['avif', 'webp', 'jpg']}
-            width={1180}
-            height={650}
-            layout={'constrained'}
-          />
-        </SlideImage>
-      </SwiperSlide>
+      {data.sliderImages.map((item, index) => {
+        const img = getImage(item);
+
+        return (
+          <SwiperSlide style={{ display: 'flex' }} key={index}>
+            <SlideImage>
+              <GatsbyImage image={img} alt={data.sliderImagesAlt[index]} />
+            </SlideImage>
+          </SwiperSlide>
+        );
+      })}
     </Swiper>
   );
 };
