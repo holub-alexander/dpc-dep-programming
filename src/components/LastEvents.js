@@ -51,7 +51,7 @@ const LastEvents = () => {
   );
 };
 
-const LastEventsBox = styled.div`
+const LastEventsBox = styled.section`
   margin-bottom: 65px;
 `;
 

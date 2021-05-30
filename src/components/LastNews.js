@@ -51,7 +51,7 @@ const LastNews = () => {
   );
 };
 
-const LastNewsBox = styled.div`
+const LastNewsBox = styled.section`
   margin-bottom: 65px;
 `;
 
