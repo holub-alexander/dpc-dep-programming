@@ -14,6 +14,7 @@ export const GlobalStyle = createGlobalStyle`
     --dark-x: #424242;
     --dark-xl: #000;
     --border: #e8e8e8;
+    --warning: #ea2d2d;
   }
 
   body {
