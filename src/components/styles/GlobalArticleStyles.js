@@ -4,7 +4,7 @@ export const GlobalArticleStyles = createGlobalStyle`
   article {
     text-align: center;
     color: #000;
-    font-family: georgia, serif;
+    font-family: 'Geogria', serif;
     line-height: 1.6;
     margin: 0;
     margin: auto;
