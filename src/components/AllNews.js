@@ -56,6 +56,7 @@ const AllNews = ({ location }) => {
 
 const AllNewsBox = styled.section`
   padding: 45px 0;
+  color: var(--dark-xl);
 `;
 
 const Container = styled.div`

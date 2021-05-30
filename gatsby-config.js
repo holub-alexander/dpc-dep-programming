@@ -42,5 +42,6 @@ module.exports = {
     },
     `gatsby-transformer-remark`,
     `gatsby-plugin-gatsby-cloud`,
+    `gatsby-theme-gallery`,
   ],
 };

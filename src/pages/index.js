@@ -9,7 +9,7 @@ import Seo from '../components/seo';
 
 const IndexPage = ({ data }) => (
   <>
-    <Seo title='Главная страница' />
+    <Seo title='Главная' />
     <Layout>
       <h1 className='hidden'>
         Донецкий политехнический колледж, отделение Программирование в

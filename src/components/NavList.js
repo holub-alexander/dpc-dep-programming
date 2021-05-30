@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 import { AiFillHome } from 'react-icons/ai';
 import { ImNewspaper } from 'react-icons/im';
 import { MdEventAvailable } from 'react-icons/md';
+import { RiGalleryFill } from 'react-icons/ri';
 
 const NavList = () => {
   return (
@@ -30,6 +31,14 @@ const NavList = () => {
             <MdEventAvailable />
           </NavLinkIcon>
           События
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to={'/gallery'}>
+          <NavLinkIcon>
+            <RiGalleryFill />
+          </NavLinkIcon>
+          Галерея
         </NavLink>
       </li>
     </NavListBox>

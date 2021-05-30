@@ -60,6 +60,7 @@ const FooterBox = styled.footer`
   background-color: var(--light-x);
   border-top: 1px solid var(--border);
   padding-bottom: 35px;
+  color: var(--dark-xl);
 `;
 
 const Container = styled.div`
