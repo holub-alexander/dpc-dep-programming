@@ -19,6 +19,14 @@ module.exports = {
         path: `${__dirname}/src/assets/images`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown`,
+        path: `${__dirname}/content`,
+        ignore: [`${__dirname}/content/gallery`, `**/gallery`],
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -33,15 +41,14 @@ module.exports = {
         icon: `src/assets/images/favicon.png`,
       },
     },
+    `gatsby-transformer-remark`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-theme-gallery`,
       options: {
-        name: `markdown`,
-        path: `${__dirname}/src/data`,
+        basePath: `/gallery-test`,
+        path: `${__dirname}/content/gallery`,
       },
     },
-    `gatsby-transformer-remark`,
     `gatsby-plugin-gatsby-cloud`,
-    `gatsby-theme-gallery`,
   ],
 };
