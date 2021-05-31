@@ -12,17 +12,23 @@ export const GlobalStyle = createGlobalStyle`
     --light-xl: #fff;
     --light-x: #f8f8f8;
     --dark-x: #424242;
+    --dark-xl: #000;
     --border: #e8e8e8;
+    --warning: #ea2d2d;
   }
 
   body {
     font-family: 'Inter', sans-serif;
-    padding-top: 80px;
     font-weight: 400;
     font-size: 16px;
     line-height: 1.2;
     position: relative;
     overflow-x: hidden;
+    background-color: #fff !important;
+  }
+
+  main {
+    padding-top: 80px;
   }
 
   img {

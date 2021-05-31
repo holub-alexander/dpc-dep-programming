@@ -48,6 +48,7 @@ const ArticleCardBox = styled.div`
   overflow-y: hidden;
   display: flex;
   flex-direction: column;
+  background-color: #fff;
 `;
 
 const ArticleCardImg = styled.div`

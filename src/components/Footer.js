@@ -60,6 +60,7 @@ const FooterBox = styled.footer`
   background-color: var(--light-x);
   border-top: 1px solid var(--border);
   padding-bottom: 35px;
+  color: var(--dark-xl);
 `;
 
 const Container = styled.div`
@@ -72,29 +73,36 @@ const Container = styled.div`
 const FooterWrapper = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-between;
 `;
 
 const FooterNav = styled.div`
-  max-width: 500px;
-  max-width: 445px;
-  width: 100%;
+  max-width: 810px;
 `;
 
 const FooterContacts = styled.div`
-  width: 100%;
+  padding: 30px 0;
+  max-width: 350px;
 `;
 
 const List = styled.ul`
   margin: 0;
   padding: 0;
   list-style: none;
-  display: flex;
-  justify-content: flex-end;
 
   p {
     margin: 0 0 0 25px;
     max-width: 360px;
     font-size: 14px;
+    line-height: 1.7;
+  }
+
+  li {
+    margin-bottom: 15px;
+
+    :last-child {
+      margin-bottom: 0;
+    }
   }
 
   svg {

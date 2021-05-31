@@ -54,8 +54,9 @@ const AllEvents = ({ location }) => {
   );
 };
 
-const AllEventsBox = styled.div`
+const AllEventsBox = styled.section`
   padding: 45px 0;
+  color: var(--dark-xl);
 `;
 
 const Container = styled.div`

@@ -38,6 +38,7 @@ const HeroContainer = styled.div`
   padding-top: 105px;
   margin-bottom: 65px;
   position: relative;
+  background-color: #fff;
 `;
 
 const Container = styled.div`
@@ -51,6 +52,7 @@ const Logo = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--dark-xl);
   width: 140px;
   height: 140px;
   font-size: 102px;
