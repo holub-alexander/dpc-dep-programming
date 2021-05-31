@@ -6,6 +6,9 @@ const Gallery = () => {
   return (
     <div>
       <GalleryBox>
+        <h1 className='hidden'>
+          Донецкий политехнический колледж, отделение программирования: галерея
+        </h1>
         <Container>
           <Title>Галерея</Title>
         </Container>
