@@ -5,6 +5,7 @@ import { AiFillHome } from 'react-icons/ai';
 import { ImNewspaper } from 'react-icons/im';
 import { MdEventAvailable } from 'react-icons/md';
 import { RiGalleryFill } from 'react-icons/ri';
+import { FiFileText } from 'react-icons/fi';
 
 const NavList = () => {
   return (
@@ -39,6 +40,14 @@ const NavList = () => {
             <RiGalleryFill />
           </NavLinkIcon>
           Галерея
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to={'/docs'}>
+          <NavLinkIcon>
+            <FiFileText />
+          </NavLinkIcon>
+          Документы
         </NavLink>
       </li>
     </NavListBox>
