@@ -48,4 +48,16 @@ export const GlobalStyle = createGlobalStyle`
     overflow: hidden;
     opacity: 0;
   }
+
+  @media screen and (max-width: 992px) {
+    main {
+      padding-top: 68.2px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    main {
+      padding-top: 43px;
+    }
+  }
 `;

@@ -49,3 +49,37 @@
 .swiper-pagination-bullet-active {
   background-color: var(--accent);
 }
+
+@media screen and (max-width: 992px) {
+  .swiper-container {
+    height: 500px;
+  }
+
+  .swiper-button-prev, 
+  .swiper-button-next {
+    width: 34px;
+    height: 67px;
+  }
+
+  .swiper-pagination-bullet {
+    width: 9px;
+    height: 9px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .swiper-container {
+    height: 430px;
+  }
+
+  .swiper-button-prev, 
+  .swiper-button-next {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .swiper-container {
+    height: 400px;
+  }
+}

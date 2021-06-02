@@ -67,6 +67,10 @@ const NavLink = styled(Link)`
   :focus {
     color: var(--accent);
   }
+
+  @media screen and (max-width: 992px) {
+    padding: 25px 17px;
+  }
 `;
 
 const NavLinkIcon = styled.span`

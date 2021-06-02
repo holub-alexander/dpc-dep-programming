@@ -2,16 +2,31 @@ import React from 'react';
 import styled from 'styled-components';
 import NavList from './NavList';
 import HeaderSocial from './HeaderSocial';
+import { GiHamburgerMenu } from 'react-icons/gi';
 
 const Header = () => {
+  const [menuState, setMenuState] = React.useState(false);
+
+  const toggleMenu = () => {
+    setMenuState(!menuState);
+    console.log('click');
+  };
+
   return (
     <Heading>
       <Container>
         <HeadingWrapper>
-          <nav>
+          <BurgerButton onClick={toggleMenu}>
+            <GiHamburgerMenu />
+          </BurgerButton>
+          <Navigation className={menuState ? 'active' : null}>
             <NavList />
-          </nav>
+          </Navigation>
           <HeaderSocial />
+          <Overlay
+            onClick={toggleMenu}
+            className={menuState ? 'active' : null}
+          />
         </HeadingWrapper>
       </Container>
     </Heading>
@@ -35,10 +50,75 @@ const HeadingWrapper = styled.div`
   justify-content: space-between;
 `;
 
+const Navigation = styled.nav`
+  @media screen and (max-width: 992px) {
+    font-size: 14px;
+
+    span {
+      font-size: 14px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    height: 100%;
+    width: 230px;
+    transform: translateX(-100%);
+    opacity: 0;
+    z-index: 8;
+    transition: transform 0.24s ease-in, opacity 0.28s ease-in;
+
+    ul {
+      display: initial;
+    }
+
+    a {
+      width: 100%;
+    }
+
+    &.active {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+`;
+
 const Container = styled.div`
   max-width: 1210px;
   margin: 0 auto;
   padding: 0 15px;
+`;
+
+const BurgerButton = styled.span`
+  display: inline-block;
+  font-size: 23px;
+  height: 42px;
+  padding: 10px;
+
+  @media screen and (min-width: 769px) {
+    display: none;
+  }
+`;
+
+const Overlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 7;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease-in;
+
+  &.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
 `;
 
 export default Header;

@@ -23,6 +23,11 @@ export const Button = styled(Link)`
   :focus {
     background-color: ${({ primary }) => (primary ? '#00309f' : '#f0f4fe')};
   }
+
+  @media screen and (max-width: 576px) {
+    font-size: 14px;
+    padding: 11px 30px;
+  }
 `;
 
 export default Button;

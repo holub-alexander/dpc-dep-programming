@@ -95,6 +95,15 @@ const Title = styled.h3`
   font-weight: 500;
   font-size: 21px;
   color: #212121;
+
+  @media screen and (max-width: 1180px) {
+    font-size: 19px;
+  }
+
+  @media screen and (max-width: 576px) {
+    font-size: 17px;
+    margin-bottom: 11px;
+  }
 `;
 
 const ArticleCardDescr = styled.p`
@@ -103,6 +112,10 @@ const ArticleCardDescr = styled.p`
   color: #424242;
   font-size: 15px;
   line-height: 1.55;
+
+  @media screen and (max-width: 1180px) {
+    font-size: 14px;
+  }
 `;
 
 const ArticleCardFooter = styled.div`
@@ -115,9 +128,14 @@ const ArticleCardFooter = styled.div`
 const Calendar = styled.p`
   margin: 0;
   padding: 0;
+  font-size: 14px;
 
   svg {
     margin-right: 7px;
+  }
+
+  @media screen and (max-width: 576px) {
+    font-size: 13px;
   }
 `;
 

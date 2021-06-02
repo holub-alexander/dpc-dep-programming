@@ -99,6 +99,22 @@ const ContactInfoBox = styled.div`
       margin-right: 8px;
     }
   }
+
+  @media screen and (max-width: 1180px) {
+    font-size: 14px;
+
+    span {
+      font-size: 16px;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    margin-bottom: 26px;
+
+    span {
+      font-size: 15px;
+    }
+  }
 `;
 
 export { ContactInfo, ContactsList as default };

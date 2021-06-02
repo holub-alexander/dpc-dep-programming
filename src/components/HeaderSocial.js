@@ -20,6 +20,12 @@ const SocialBox = styled.div`
     font-size: 14px;
     margin-right: 10px;
   }
+
+  @media screen and (max-width: 992px) {
+    span {
+      display: none;
+    }
+  }
 `;
 
 export default HeaderSocial;

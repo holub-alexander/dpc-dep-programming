@@ -133,12 +133,24 @@ const Title = styled.p`
   margin: 0 0 7px;
   font-size: 21px;
   font-weight: 500;
+
+  @media screen and (max-width: 1180px) {
+    font-size: 19px;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 17px;
+  }
 `;
 
 const Descr = styled.p`
   margin: 0 0 25px;
   font-size: 15px;
   color: #424242;
+
+  @media screen and (max-width: 1180px) {
+    font-size: 14px;
+  }
 `;
 
 const Form = styled.form`
@@ -153,6 +165,7 @@ const FormInput = styled.input`
   border: 1px solid #b9b5b5;
   margin-bottom: 15px;
   border-radius: 4px;
+  appearance: none;
 
   ::placeholder {
     font-size: 14px;

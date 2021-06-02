@@ -4,6 +4,19 @@ import { ContactInfo } from './ContactsList';
 import NavList from './NavList';
 import { useStaticQuery, graphql } from 'gatsby';
 
+const contactInfo = [
+  {
+    title: 'Адрес',
+    infoType: 'address',
+    iconType: 'address',
+  },
+  {
+    title: 'Телефон',
+    infoType: 'phone',
+    iconType: 'phone',
+  },
+];
+
 const Footer = () => {
   const data = useStaticQuery(graphql`
     query FooterContactsQuery {
@@ -25,26 +38,18 @@ const Footer = () => {
           </FooterNav>
           <FooterContacts>
             <List>
-              <li>
-                <p>
-                  <ContactInfo
-                    title='Адрес'
-                    info={data.markdownRemark.frontmatter.address}
-                    iconType='address'
-                    isPosFooter='true'
-                  />
-                </p>
-              </li>
-              <li>
-                <p>
-                  <ContactInfo
-                    title='Телефон'
-                    info={data.markdownRemark.frontmatter.phone}
-                    iconType='phone'
-                    isPosFooter='true'
-                  />
-                </p>
-              </li>
+              {contactInfo.map((item, index) => (
+                <li key={`${item.title}${index}`}>
+                  <p>
+                    <ContactInfo
+                      title={item.title || ''}
+                      info={data.markdownRemark.frontmatter[item.infoType]}
+                      iconType={item.iconType}
+                      isPosFooter='true'
+                    />
+                  </p>
+                </li>
+              ))}
             </List>
           </FooterContacts>
         </FooterWrapper>
@@ -78,11 +83,33 @@ const FooterWrapper = styled.div`
 
 const FooterNav = styled.div`
   max-width: 810px;
+
+  @media screen and (max-width: 1180px) {
+    font-size: 13px;
+  }
+
+  @media screen and (max-width: 992px) {
+    display: none;
+  }
 `;
 
 const FooterContacts = styled.div`
-  padding: 30px 0;
+  padding: 30px 0 15px;
   max-width: 350px;
+
+  @media screen and (max-width: 992px) {
+    max-width: none;
+    width: 100%;
+    text-align: center;
+
+    ul li {
+      display: inline-block;
+
+      p {
+        margin: 0 10px 0 10px;
+      }
+    }
+  }
 `;
 
 const List = styled.ul`
