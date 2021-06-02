@@ -19,9 +19,9 @@ const Header = () => {
 };
 
 const Heading = styled.header`
-  background-color: var(--light-x);
+  background-color: var(--bg-dark);
   color: var(--dark-xl);
-  border-bottom: 1px solid #e8e8e8;
+  border-bottom: 1px solid #d2d2d2;
   position: fixed;
   width: 100%;
   top: 0;

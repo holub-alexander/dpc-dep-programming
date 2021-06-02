@@ -25,6 +25,7 @@ const Contacts = () => {
 const ContactsBox = styled.section`
   margin-bottom: 35px;
   color: var(--dark-xl);
+  background-color: var(--bg-light);
 `;
 
 const Container = styled.div`

@@ -15,6 +15,8 @@ export const GlobalStyle = createGlobalStyle`
     --dark-xl: #000;
     --border: #e8e8e8;
     --warning: #ea2d2d;
+    --bg-light: #faf9f9;
+    --bg-dark: #ededed;
   }
 
   body {
@@ -24,7 +26,7 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1.2;
     position: relative;
     overflow-x: hidden;
-    background-color: #fff !important;
+    background-color: #faf9f9 !important;
   }
 
   main {

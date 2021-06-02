@@ -7,51 +7,45 @@ import { MdEventAvailable } from 'react-icons/md';
 import { RiGalleryFill } from 'react-icons/ri';
 import { FiFileText } from 'react-icons/fi';
 
+const navLinks = [
+  {
+    link: '/',
+    descr: 'Главная',
+    icon: <AiFillHome />,
+  },
+  {
+    link: '/news',
+    descr: 'Новости',
+    icon: <ImNewspaper />,
+  },
+  {
+    link: '/events',
+    descr: 'События',
+    icon: <MdEventAvailable />,
+  },
+  {
+    link: '/gallery',
+    descr: 'Галерея',
+    icon: <RiGalleryFill />,
+  },
+  {
+    link: '/docs',
+    descr: 'Документы',
+    icon: <FiFileText />,
+  },
+];
+
 const NavList = () => {
-  return (
-    <NavListBox>
-      <li>
-        <NavLink to={'/'}>
-          <NavLinkIcon>
-            <AiFillHome />
-          </NavLinkIcon>
-          Главная
-        </NavLink>
-      </li>
-      <li>
-        <NavLink to={'/news'}>
-          <NavLinkIcon>
-            <ImNewspaper />
-          </NavLinkIcon>
-          Новости
-        </NavLink>
-      </li>
-      <li>
-        <NavLink to={'/events'}>
-          <NavLinkIcon>
-            <MdEventAvailable />
-          </NavLinkIcon>
-          События
-        </NavLink>
-      </li>
-      <li>
-        <NavLink to={'/gallery'}>
-          <NavLinkIcon>
-            <RiGalleryFill />
-          </NavLinkIcon>
-          Галерея
-        </NavLink>
-      </li>
-      <li>
-        <NavLink to={'/docs'}>
-          <NavLinkIcon>
-            <FiFileText />
-          </NavLinkIcon>
-          Документы
-        </NavLink>
-      </li>
-    </NavListBox>
-  );
+  const navListItems = navLinks.map((item, index) => (
+    <li key={`${index}${item.text}`}>
+      <NavLink to={item.link} activeStyle={activeLinkStyles}>
+        <NavLinkIcon>{item.icon}</NavLinkIcon>
+        {item.descr}
+      </NavLink>
+    </li>
+  ));
+
+  return <NavListBox>{navListItems}</NavListBox>;
 };
 
 const NavListBox = styled.ul`
@@ -79,5 +73,9 @@ const NavLinkIcon = styled.span`
   margin-right: 7px;
   font-size: 15px;
 `;
+
+const activeLinkStyles = {
+  color: 'var(--accent)',
+};
 
 export default NavList;

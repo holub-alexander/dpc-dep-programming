@@ -2,6 +2,7 @@ import React from 'react';
 import { BsCalendar } from 'react-icons/bs';
 import styled from 'styled-components';
 import { Button } from './Button';
+import { Link } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 const ArticleCard = ({ location, info } = {}) => {
@@ -19,9 +20,11 @@ const ArticleCard = ({ location, info } = {}) => {
     return text && text.length > length ? `${text.slice(0, length)}...` : text;
   };
 
+  const dateArr = date.split('.');
+
   return (
     <ArticleCardBox>
-      <ArticleCardImg>
+      <ArticleCardImg to={`${page || location.pathname}/${url}`}>
         <GatsbyImage image={img} alt={title} />
       </ArticleCardImg>
       <ArticleCardInfo>
@@ -33,7 +36,8 @@ const ArticleCard = ({ location, info } = {}) => {
           </Button>
           <Calendar>
             <BsCalendar />
-            {date}
+            {console.log(date.split('.')[2].slice(-2))}
+            {`${dateArr[0]}.${dateArr[1]}.${dateArr[2].slice(-2)}`}
           </Calendar>
         </ArticleCardFooter>
       </ArticleCardInfo>
@@ -49,9 +53,10 @@ const ArticleCardBox = styled.div`
   display: flex;
   flex-direction: column;
   background-color: #fff;
+  color: #000;
 `;
 
-const ArticleCardImg = styled.div`
+const ArticleCardImg = styled(Link)`
   overflow: hidden;
   display: flex;
   position: relative;
@@ -69,6 +74,12 @@ const ArticleCardImg = styled.div`
     height: 100%;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.3);
+    transition: background-color 0.2s ease-in;
+  }
+
+  :hover::after,
+  :focus::after {
+    background-color: rgba(6, 66, 205, 0.15);
   }
 `;
 
@@ -91,6 +102,7 @@ const ArticleCardDescr = styled.p`
   padding: 0;
   color: #424242;
   font-size: 15px;
+  line-height: 1.55;
 `;
 
 const ArticleCardFooter = styled.div`

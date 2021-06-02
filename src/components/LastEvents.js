@@ -53,7 +53,7 @@ const LastEvents = () => {
 
 const LastEventsBox = styled.section`
   margin-bottom: 65px;
-  background-color: #fff;
+  background-color: var(--bg-light);
 `;
 
 const Container = styled.div`

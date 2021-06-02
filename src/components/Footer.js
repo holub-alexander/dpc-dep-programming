@@ -57,8 +57,8 @@ const Footer = () => {
 };
 
 const FooterBox = styled.footer`
-  background-color: var(--light-x);
-  border-top: 1px solid var(--border);
+  background-color: var(--bg-dark);
+  border-top: 1px solid #d2d2d2;
   padding-bottom: 35px;
   color: var(--dark-xl);
 `;
