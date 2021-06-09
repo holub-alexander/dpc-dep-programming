@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import NavList from './NavList';
 import HeaderSocial from './HeaderSocial';
-import { GiHamburgerMenu } from 'react-icons/gi';
+import { FiMenu } from 'react-icons/fi';
+import ScrollLock, { TouchScrollable } from 'react-scrolllock';
 
 const Header = () => {
   const [menuState, setMenuState] = React.useState(false);
@@ -16,17 +17,14 @@ const Header = () => {
     <Heading>
       <Container>
         <HeadingWrapper>
-          <BurgerButton onClick={toggleMenu}>
-            <GiHamburgerMenu />
-          </BurgerButton>
-          <Navigation className={menuState ? 'active' : null}>
-            <NavList />
-          </Navigation>
+          <BurgerButton onClick={toggleMenu} />
+          <ScrollLock isActive={menuState}>
+            <Navigation className={menuState ? 'active' : ''}>
+              <NavList />
+            </Navigation>
+          </ScrollLock>
           <HeaderSocial />
-          <Overlay
-            onClick={toggleMenu}
-            className={menuState ? 'active' : null}
-          />
+          <Overlay onClick={toggleMenu} className={menuState ? 'active' : ''} />
         </HeadingWrapper>
       </Container>
     </Heading>
@@ -51,6 +49,8 @@ const HeadingWrapper = styled.div`
 `;
 
 const Navigation = styled.nav`
+  overflow-y: auto;
+
   @media screen and (max-width: 992px) {
     font-size: 14px;
 
@@ -92,11 +92,13 @@ const Container = styled.div`
   padding: 0 15px;
 `;
 
-const BurgerButton = styled.span`
+const BurgerButton = styled(FiMenu)`
   display: inline-block;
   font-size: 23px;
   height: 42px;
+  width: 42px;
   padding: 10px;
+  cursor: pointer;
 
   @media screen and (min-width: 769px) {
     display: none;
@@ -113,7 +115,7 @@ const Overlay = styled.div`
   z-index: 7;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.2s ease-in;
+  transition: all 500ms;
 
   &.active {
     opacity: 1;

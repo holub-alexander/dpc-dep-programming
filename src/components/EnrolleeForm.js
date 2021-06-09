@@ -160,7 +160,7 @@ const Form = styled.form`
 
 const FormInput = styled.input`
   height: 42px;
-  font-size: 14px;
+  font-size: 16px;
   padding: 0 15px;
   border: 1px solid #b9b5b5;
   margin-bottom: 15px;
