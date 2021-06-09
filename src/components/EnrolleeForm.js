@@ -43,7 +43,6 @@ const EnrolleeForm = () => {
       setErrors(validateForm.messages);
       setFormError(true);
     } else {
-      console.log('SFLASLFLAS');
       handleSubmit(formData);
       setFormError(false);
       setClientName('');

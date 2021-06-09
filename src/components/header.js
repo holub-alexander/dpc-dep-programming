@@ -10,7 +10,6 @@ const Header = () => {
 
   const toggleMenu = () => {
     setMenuState(!menuState);
-    console.log('click');
   };
 
   return (
