@@ -25,6 +25,7 @@ const Contacts = () => {
 const ContactsBox = styled.section`
   margin-bottom: 35px;
   color: var(--dark-xl);
+  background-color: var(--bg-light);
 `;
 
 const Container = styled.div`
@@ -39,14 +40,28 @@ const Title = styled.p`
   font-weight: 500;
   margin: 0 0 55px;
   text-align: center;
+
+  @media screen and (max-width: 1180px) {
+    font-size: 26px;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 23px;
+    margin-bottom: 25px;
+  }
 `;
 
 const ContactsWrapper = styled.div`
   display: grid;
-  grid-template-columns: minmax(280px, 480px) minmax(280px, 394px);
+  grid-template-columns: minmax(290px, 480px) minmax(290px, 394px);
   gap: 45px;
   max-width: 900px;
   margin: 0 auto;
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: minmax(290px, 420px);
+    justify-content: center;
+  }
 `;
 
 export default Contacts;

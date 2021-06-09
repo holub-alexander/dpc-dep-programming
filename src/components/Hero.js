@@ -17,7 +17,7 @@ const Hero = ({ sliderImg }) => {
   `);
 
   return (
-    <HeroContainer>
+    <HeroBox>
       <Container>
         <Logo>
           <BiBuildingHouse />
@@ -30,15 +30,27 @@ const Hero = ({ sliderImg }) => {
           </HeroTitle>
         </HeroInfo>
       </Container>
-    </HeroContainer>
+    </HeroBox>
   );
 };
 
-const HeroContainer = styled.div`
+const HeroBox = styled.div`
   padding-top: 105px;
   margin-bottom: 65px;
   position: relative;
-  background-color: #fff;
+  background-color: var(--bg-light);
+
+  @media screen and (max-width: 992px) {
+    margin-bottom: 55px;
+  }
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 40px;
+  }
+
+  @media screen and (max-width: 576px) {
+    padding-top: 70px;
+  }
 `;
 
 const Container = styled.div`
@@ -63,6 +75,18 @@ const Logo = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 5;
+
+  @media screen and (max-width: 992px) {
+    width: 115px;
+    height: 115px;
+    font-size: 82px;
+  }
+
+  @media screen and (max-width: 576px) {
+    width: 90px;
+    height: 90px;
+    font-size: 64px;
+  }
 `;
 
 const HeroInfo = styled.div`
@@ -73,6 +97,19 @@ const HeroInfo = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  @media screen and (max-width: 1180px) {
+    max-width: 755px;
+  }
+
+  @media screen and (max-width: 992px) {
+    max-width: 605px;
+  }
+
+  @media screen and (max-width: 768px) {
+    max-width: 100%;
+    padding: 0 25px;
+  }
 `;
 
 const HeroTitle = styled.p`
@@ -91,6 +128,38 @@ const HeroTitle = styled.p`
     display: block;
     margin-top: 17px;
     letter-spacing: 1.5px;
+  }
+
+  @media screen and (max-width: 1180px) {
+    font-size: 47px;
+
+    span {
+      font-size: 26px;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    font-size: 40px;
+
+    span {
+      font-size: 23px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 33px;
+
+    span {
+      font-size: 20px;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    font-size: 26px;
+
+    span {
+      font-size: 18px;
+    }
   }
 `;
 
