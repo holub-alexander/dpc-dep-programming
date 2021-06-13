@@ -69,12 +69,32 @@ const Title = styled.p`
   font-size: 30px;
   font-weight: 500;
   margin: 0 0 35px;
+
+  @media screen and (max-width: 1180px) {
+    font-size: 26px;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 23px;
+    margin-bottom: 25px;
+  }
 `;
 
 const NewsBox = styled.div`
   display: grid;
   grid-template-columns: repeat(3, minmax(285px, 1fr));
   gap: 30px;
+
+  @media screen and (max-width: 992px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 35px;
+  }
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+    margin-bottom: 25px;
+  }
 `;
 
 export default AllNews;

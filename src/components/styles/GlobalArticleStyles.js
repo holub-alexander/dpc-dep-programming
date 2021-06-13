@@ -112,8 +112,10 @@ export const GlobalArticleStyles = createGlobalStyle`
   }
 
   article ul,
-  ol,
-  dl {
+  article ol,
+  article dl {
+    margin: 15px 0;
+    padding-left: 30px;
     text-align: left;
   }
 
@@ -167,10 +169,103 @@ export const GlobalArticleStyles = createGlobalStyle`
     margin: 0.5em 0 1em 2em;
   }
 
-  @media (max-width: 500px) {
-    body {
-      font-size: 80%;
+  @media screen and (max-width: 1180px) {
+    article h1 {
+      font-size: 40px;
     }
+
+    article h2 {
+      font-size: 36px;
+    }
+
+    article h3 {
+      font-size: 33px;
+    }
+
+    article h4 {
+      font-size: 29px;
+    }
+
+    article h5 {
+      font-size: 25px;
+    }
+
+    article h6 {
+      font-size: 21px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    article h1 {
+      font-size: 37px;
+    }
+
+    article h2 {
+      font-size: 32px;
+    }
+
+    article h3 {
+      font-size: 29px;
+    }
+
+    article h4 {
+      font-size: 26px;
+    }
+
+    article h5 {
+      font-size: 22px;
+    }
+
+    article h6 {
+      font-size: 20px;
+    }
+
+    article p {
+      font-size: 18px;
+    }
+
+    article li {
+      font-size: 18px;
+    }
+  }
+
+  @media (max-width: 560px) {
+    article h1 {
+      font-size: 31px;
+    }
+
+    article h2 {
+      font-size: 28px;
+    }
+
+    article h3 {
+      font-size: 26px;
+    }
+
+    article h4 {
+      font-size: 24px;
+    }
+
+    article h5 {
+      font-size: 22px;
+    }
+
+    article h6 {
+      font-size: 20px;
+    }
+
+    article p {
+      font-size: 16px;
+    }
+
+    article li {
+      font-size: 16px;
+    }
+
+    article pre {
+      font-size: 16px;
+    }
+
     img {
       max-width: 100% !important;
       height: auto !important;

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useForm, ValidationError } from '@formspree/react';
-import { isValideForm, isValideName } from '../utils/validate';
+import { isValideForm, isValideName } from '../helpers/validate';
 import InputMask from 'react-input-mask';
 
 const EnrolleeForm = () => {

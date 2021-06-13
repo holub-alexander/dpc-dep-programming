@@ -34,6 +34,15 @@ const Title = styled.p`
   margin: 0 0 35px;
   color: var(--dark-xl);
   text-align: center;
+
+  @media screen and (max-width: 1180px) {
+    font-size: 26px;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 23px;
+    margin-bottom: 25px;
+  }
 `;
 
 export default Gallery;
