@@ -36,7 +36,6 @@ const ArticleCard = ({ location, info } = {}) => {
           </Button>
           <Calendar>
             <BsCalendar />
-            {console.log(date.split('.')[2].slice(-2))}
             {`${dateArr[0]}.${dateArr[1]}.${dateArr[2].slice(-2)}`}
           </Calendar>
         </ArticleCardFooter>
