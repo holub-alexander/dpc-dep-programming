@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import NavList from './NavList';
 import HeaderSocial from './HeaderSocial';
 import { FiMenu } from 'react-icons/fi';
-import ScrollLock, { TouchScrollable } from 'react-scrolllock';
+import ScrollLock from 'react-scrolllock';
 
 const Header = () => {
   const [menuState, setMenuState] = React.useState(false);

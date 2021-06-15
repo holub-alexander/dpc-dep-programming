@@ -33,6 +33,10 @@ export const data = graphql`
 
 const NewsArticleBox = styled.article`
   padding: 45px 0;
+
+  @media screen and (max-width: 768px) {
+    padding: 30px 0;
+  }
 `;
 
 const Container = styled.div`
