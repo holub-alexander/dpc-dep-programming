@@ -40,18 +40,21 @@ export const GlobalArticleStyles = createGlobalStyle`
     line-height: 1.35;
     font-style: normal;
     margin: 0.6em 0 0.8em;
+    overflow: hidden;
   }
 
   article h2 {
     font-weight: 700;
     font-size: 41px;
     margin: 1em 0 0.8em;
+    overflow: hidden;
   }
 
   article h3 {
     font-weight: 400;
     font-size: 37px;
     margin: 1em 0 0.8em;
+    overflow: hidden;
   }
 
   article h4 {
@@ -59,12 +62,14 @@ export const GlobalArticleStyles = createGlobalStyle`
     font-size: 32px;
     letter-spacing: 0.1em;
     margin: 1.5em 0 0.8em;
+    overflow: hidden;
   }
 
   article h5 {
     font-weight: 400;
     font-size: 29px;
     margin: 1.5em 0 0.8em;
+    overflow: hidden;
   }
 
   article h6 {
@@ -72,12 +77,14 @@ export const GlobalArticleStyles = createGlobalStyle`
     letter-spacing: 0.1em;
     font-weight: 400;
     margin: 1.5em 0 0.8em;
+    overflow: hidden;
   }
 
   article p {
     text-align: left;
     font-size: 21px;
     margin: 1em 0 0;
+    text-indent: 1.5em;
   }
 
   article p.lead {
@@ -87,7 +94,6 @@ export const GlobalArticleStyles = createGlobalStyle`
 
   article p + p {
     margin: 0;
-    text-indent: 1.5em;
   }
 
   article p + ul,
@@ -115,7 +121,7 @@ export const GlobalArticleStyles = createGlobalStyle`
   article ol,
   article dl {
     margin: 15px 0;
-    padding-left: 30px;
+    padding-left: 55px;
     text-align: left;
   }
 

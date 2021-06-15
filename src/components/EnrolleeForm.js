@@ -12,7 +12,7 @@ const EnrolleeForm = () => {
   const [isFormError, setFormError] = React.useState(false);
   const [isSubmit, setSubmitForm] = React.useState(false);
   const message = React.useRef();
-  const [state, handleSubmit] = useForm('xzbyrvzb');
+  const [state, handleSubmit] = useForm('mwkabqgn');
 
   const changeInput = event => {
     const value = event.target.value;
@@ -43,7 +43,6 @@ const EnrolleeForm = () => {
       setErrors(validateForm.messages);
       setFormError(true);
     } else {
-      console.log('SFLASLFLAS');
       handleSubmit(formData);
       setFormError(false);
       setClientName('');

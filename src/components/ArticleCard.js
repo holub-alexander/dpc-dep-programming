@@ -25,7 +25,7 @@ const ArticleCard = ({ location, info } = {}) => {
   return (
     <ArticleCardBox>
       <ArticleCardImg to={`${page || location.pathname}/${url}`}>
-        <GatsbyImage image={img} alt={title} />
+        {image ? <GatsbyImage image={img} alt={title} /> : null}
       </ArticleCardImg>
       <ArticleCardInfo>
         <Title>{formatText(title, 52)}</Title>
@@ -86,7 +86,7 @@ const ArticleCardImg = styled(Link)`
 const ArticleCardInfo = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 30px 25px;
+  padding: 30px 25px 16px;
   height: 100%;
 `;
 

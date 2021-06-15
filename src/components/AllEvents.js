@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import ArticleCard from './ArticleCard';
 import { useStaticQuery, graphql } from 'gatsby';
+import sortArticles from './../helpers/sortArticles';
 
 const AllEvents = ({ location }) => {
   const data = useStaticQuery(graphql`
@@ -29,6 +30,8 @@ const AllEvents = ({ location }) => {
       }
     }
   `);
+
+  sortArticles(data.allMarkdownRemark.nodes);
 
   return (
     <AllEventsBox>

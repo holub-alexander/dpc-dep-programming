@@ -41,7 +41,24 @@ module.exports = {
         icon: `src/assets/images/favicon.png`,
       },
     },
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800,
+              maxHeight: 550,
+              withWebp: true,
+              withAvif: true,
+              wrapperStyle: `margin: 30px auto`,
+              linkImagesToOriginal: false,
+            },
+          },
+        ],
+      },
+    },
     {
       resolve: `gatsby-theme-gallery`,
       options: {

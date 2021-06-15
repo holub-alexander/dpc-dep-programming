@@ -3,6 +3,7 @@ import ArticleCard from './ArticleCard';
 import styled from 'styled-components';
 import { Button } from './Button';
 import { useStaticQuery, graphql } from 'gatsby';
+import sortArticles from './../helpers/sortArticles';
 
 const LastNews = () => {
   const data = useStaticQuery(graphql`
@@ -29,6 +30,8 @@ const LastNews = () => {
       }
     }
   `);
+
+  sortArticles(data.allMarkdownRemark.nodes);
 
   return (
     <LastNewsBox>
